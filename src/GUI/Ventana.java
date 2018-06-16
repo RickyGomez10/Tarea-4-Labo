@@ -21,7 +21,7 @@ public class Ventana extends JPanel {
     public int WIDTH = 700, widthTF= 120, widthB =80;
     public int HEIGHT =700, heightTF = 30, heightB =30;
     public JTextField numero1, numero2, resultado;
-    public JButton sumar, restar, multiplicar, dividir, binario;
+    public JButton sumar, restar, multiplicar, dividir, binario, hexadecimal;
     
     
     public Ventana(){
@@ -47,7 +47,10 @@ public class Ventana extends JPanel {
     dividir.setBounds(new Rectangle(250,150, widthB, heightB));
     
     binario = new JButton("Binario");
-    binario.setBounds(new Rectangle(400,125, widthB, heightB));
+    binario.setBounds(new Rectangle(370,115, widthB, heightB));
+
+    hexadecimal = new JButton("Hexadecimal");
+    hexadecimal.setBounds(370,150, widthB, heightB);
     
     numero1.setEditable(true);
     numero2.setEditable(true);
@@ -119,6 +122,18 @@ public class Ventana extends JPanel {
            
         }
     });
+    hexadecimal.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try{
+
+                JOptionPane.showMessageDialog(null, "Su numero a hexadecimal es: "+Integer.toHexString(Integer.parseInt(numero1.getText())));
+            } catch(Exception s){
+                JOptionPane.showMessageDialog(null, "No se puede convertir a hexadecimal");
+
+            }
+        }
+    });
     
     
     add(numero1);
@@ -129,6 +144,7 @@ public class Ventana extends JPanel {
     add(resultado);
     add(binario);
     add(numero2);
+    add(hexadecimal);
     setLayout(null);
     setPreferredSize(new Dimension(WIDTH, HEIGHT));
     
