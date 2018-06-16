@@ -24,6 +24,8 @@ public class FactoryOperacion implements AbstractFactory{
                 return  new Multiplicar();
             case "dividir":
                 return  new dividir();
+            case "binario":
+                    return new binario();
         } 
             return null;
         

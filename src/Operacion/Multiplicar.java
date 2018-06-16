@@ -11,10 +11,15 @@ package Operacion;
  */
 public class Multiplicar implements Operacion{
     @Override
-    public void operar(int numero1, int numero2){
+    public int operar(int numero1, int numero2){
     int multipicacion = numero1*numero2;
         System.out.println("La multiplicacion es: "+ multipicacion);
-    
+        return multipicacion;
     }
-    
+
+    @Override
+    public void operar2(double[] numero1) {
+
+    }
+
 }

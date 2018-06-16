@@ -11,10 +11,15 @@ package Operacion;
  */
 public class Suma implements Operacion{
     @Override
-    public void operar(int numero1, int numero2){
+    public int operar(int numero1, int numero2){
     int sumar = numero1+numero2;
         System.out.println("La suma es: "+ sumar);
-    
+        return sumar;
     }
-    
+
+    @Override
+    public void operar2(double[] numero1) {
+
+    }
+
 }

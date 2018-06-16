@@ -14,9 +14,8 @@ import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import java.util.Arrays;
+import javax.swing.*;
 
 public class Ventana extends JPanel {
     public int WIDTH = 700, widthTF= 120, widthB =80;
@@ -63,7 +62,8 @@ public class Ventana extends JPanel {
             int suma2 = Integer.parseInt(numero2.getText());
             factory = FactoryProducer.getFactory("operacion");
             Operacion suma = factory.getOperacion("sumar");
-            suma.operar(suma1, suma2);
+
+            JOptionPane.showMessageDialog(null,"Su suma es: " +suma.operar(suma1, suma2));
             
             
            
@@ -77,7 +77,7 @@ public class Ventana extends JPanel {
             int resta2 = Integer.parseInt(numero2.getText());
             factory = FactoryProducer.getFactory("operacion");
             Operacion resta = factory.getOperacion("restar");
-            resta.operar(resta1, resta2);
+            JOptionPane.showMessageDialog(null,"Su resta es: "+resta.operar(resta1, resta2));
            
         }
     });
@@ -90,7 +90,7 @@ public class Ventana extends JPanel {
             int mult2 = Integer.parseInt(numero2.getText());
             factory = FactoryProducer.getFactory("operacion");
             Operacion multiplicacion = factory.getOperacion("multiplicar");
-            multiplicacion.operar(mult1, mult2);
+            JOptionPane.showMessageDialog(null, "Su multiplicacion es: "+multiplicacion.operar(mult1, mult2));
            
         }
     });
@@ -102,13 +102,20 @@ public class Ventana extends JPanel {
             int div2 = Integer.parseInt(numero2.getText());
             factory = FactoryProducer.getFactory("operacion");
             Operacion division = factory.getOperacion("dividir");
-            division.operar(div1, div2);
+            JOptionPane.showMessageDialog(null, "Su division es: "+division.operar(div1,div2));
            
         }
     });
     binario.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent arg0) {
+            try{
+
+               JOptionPane.showMessageDialog(null, "Su numero a binario es: "+Integer.toBinaryString(Integer.parseInt(numero1.getText())));
+            } catch(Exception e){
+                JOptionPane.showMessageDialog(null, "No se puede convertir a binario");
+
+            }
            
         }
     });
@@ -119,6 +126,7 @@ public class Ventana extends JPanel {
     add(restar);
     add(dividir);
     add(multiplicar);
+    add(resultado);
     add(binario);
     add(numero2);
     setLayout(null);

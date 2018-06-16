@@ -11,10 +11,16 @@ package Operacion;
  */
 public class Resta implements Operacion {
     @Override
-    public void operar(int numero1, int numero2){
+    public int operar(int numero1, int numero2){
     int restar = numero1-numero2;
         System.out.println("La resta es: "+ restar);
+        return restar;
     
     }
-    
+
+    @Override
+    public void operar2(double[] numero1) {
+
+    }
+
 }

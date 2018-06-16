@@ -11,10 +11,16 @@ package Operacion;
  */
 public class dividir implements Operacion{
     @Override
-    public void operar(int numero1, int numero2){
+    public int operar(int numero1, int numero2){
     int division = numero1/numero2;
         System.out.println("La division es: "+ division);
+        return division;
     
     }
-    
+
+    @Override
+    public void operar2(double[] numero1) {
+
+    }
+
 }

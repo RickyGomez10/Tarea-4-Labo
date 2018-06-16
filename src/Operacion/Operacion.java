@@ -10,6 +10,7 @@ package Operacion;
  * @author LN710Q
  */
 public  interface Operacion {
-    void operar(int numero1, int numero2);
+    int operar(int numero1, int numero2);
+    void operar2(double[] numero1);
     
 }
